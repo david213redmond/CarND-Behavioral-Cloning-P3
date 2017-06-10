@@ -120,6 +120,10 @@ if __name__ == '__main__':
               ', but the model was built using ', model_version)
 
     model = load_model(args.model)
+    
+    # plot model.
+    from keras.utils.visualize_util import plot
+    plot(model, show_shapes=True, to_file='model.png')
 
     if args.image_folder != '':
         print("Creating image folder at {}".format(args.image_folder))
